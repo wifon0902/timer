@@ -6,16 +6,20 @@ const appendSeconds = document.querySelector(".seconds");
 const appendTens = document.querySelector(".tens");
 
 let interval;
-
 let seconds = 0;
 let tens = 0;
 
 startButton.addEventListener("click", () => {
+  clearInterval(interval);
   interval = setInterval(startTimer, 10);
 });
 
 stopButton.addEventListener("click", () => {
-  stopTimer();
+  clearInterval(interval);
+});
+
+resetButton.addEventListener("click", () => {
+  resetTimer();
 });
 
 function startTimer() {
@@ -43,4 +47,12 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(interval);
+}
+
+function resetTimer() {
+  stopTimer();
+  seconds = 0;
+  tens = 0;
+  appendSeconds.innerHTML = "00";
+  appendTens.innerHTML = "00";
 }
