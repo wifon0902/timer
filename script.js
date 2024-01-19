@@ -14,6 +14,10 @@ startButton.addEventListener("click", () => {
   interval = setInterval(startTimer, 10);
 });
 
+stopButton.addEventListener("click", () => {
+  stopTimer();
+});
+
 function startTimer() {
   tens++;
   appendTens.innerHTML = tens;
@@ -25,4 +29,8 @@ function startTimer() {
     tens = 0;
     appendTens.innerHTML = tens;
   }
+}
+
+function stopTimer() {
+  clearInterval(interval);
 }
