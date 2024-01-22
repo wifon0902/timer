@@ -6,8 +6,13 @@
     <title>Timer</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/004bb1ffb8.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <p class="label">Stopwatch</p>
     <div class="container">
       <div class="timer">
         <span class="minutes">00</span>:<span class="seconds">00</span>:<span
@@ -17,9 +22,13 @@
       </div>
 
       <div class="buttons">
-        <button class="start">Start</button>
-        <button class="stop">Stop</button>
-        <button class="reset">Reset</button>
+        <button class="start button"><i class="fa-solid fa-play"></i></button>
+        <button class="stop button hidden">
+          <i class="fa-solid fa-pause"></i>
+        </button>
+        <button class="reset button hidden">
+          <i class="fa-solid fa-arrow-rotate-left"></i>
+        </button>
       </div>
     </div>
   </body>

@@ -10,18 +10,28 @@ let interval;
 let minutes = 0;
 let seconds = 0;
 let tens = 0;
+let isStart = false;
 
 startButton.addEventListener("click", () => {
   clearInterval(interval);
+
+  startButton.classList.toggle("hidden");
+  stopButton.classList.toggle("hidden");
+  resetButton.classList.remove("hidden");
   interval = setInterval(startTimer, 10);
 });
 
 stopButton.addEventListener("click", () => {
   clearInterval(interval);
+  startButton.classList.toggle("hidden");
+  stopButton.classList.toggle("hidden");
 });
 
 resetButton.addEventListener("click", () => {
   resetTimer();
+  resetButton.classList.add("hidden");
+  startButton.classList.remove("hidden");
+  stopButton.classList.add("hidden");
 });
 
 function startTimer() {
@@ -51,7 +61,7 @@ function startTimer() {
     appendMinutes.innerHTML = "0" + minutes;
 
     seconds = 0;
-    appendSeconds.innerHTML = seconds;
+    appendSeconds.innerHTML = "0" + seconds;
   }
 
   if (minutes > 9) {
