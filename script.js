@@ -39,7 +39,7 @@ function startTimer() {
     appendSeconds.innerHTML = "0" + seconds;
 
     tens = 0;
-    appendTens.innerHTML = tens;
+    appendTens.innerHTML = "0" + tens;
   }
 
   if (seconds > 9) {
